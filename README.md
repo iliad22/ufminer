@@ -1,0 +1,2 @@
+# ufminer
+Universal FPGA Miner
