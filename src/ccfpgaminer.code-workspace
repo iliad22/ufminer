@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../cminer_kaspa"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"config.h": "c",
+			"radiant.h": "c",
+			"curl.h": "c",
+			"f1.h": "c",
+			"sph_sha2.h": "c",
+			"sph_types.h": "c",
+			"util.h": "c"
+		}
+	}
+}

@@ -1,0 +1,6 @@
+[submodule "libs/cJSON"]
+	path = libs/cJSON
+	url = https://github.com/DaveGamble/cJSON
+[submodule "libs/Queue"]
+	path = libs/Queue
+	url = https://github.com/tobithiel/Queue.git
