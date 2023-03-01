@@ -5,7 +5,7 @@
 #include "radiant.h"
 
 // devices
-#include "f1.h"s
+#include "f1.h"
 #include "sk1.h"
 
 static bool miner_killed = false;
