@@ -6,13 +6,6 @@
 #include "cJSON.h"
 #include "config.h"
 
-// coins
-#include "radiant.h"
-
-// devices
-#include "f1.h"
-#include "sk1.h"
-
 static pthread_t g_pt_http_server;
 static Pconfig g_cfg;
 
@@ -47,14 +40,6 @@ static void* http_thread(void *arg) {
 }
 
 Pconfig init_config(int argc, char *argv[]) {
-    // banner
-    printf("\
- dP\"\"b8 888888 88\"\"Yb  dP\"\"b8    db    8b    d8 88 88b 88 888888 88\"\"Yb \n\
-dP   `\" 88__   88__dP dP   `\"   dPYb   88b  d88 88 88Yb88 88__   88__dP \n\
-Yb      88\"\"   88\"\"\"  Yb  \"88  dP__Yb  88YbdP88 88 88 Y88 88\"\"   88\"Yb  \n\
- YboodP 88     88      YboodP dP\"\"\"\"Yb 88 YY 88 88 88  Y8 888888 88  Yb \n\
-\n\n");
-
     Pconfig pconfig = malloc(sizeof(config));
     if (pconfig == NULL) {
         return NULL;
@@ -63,8 +48,8 @@ Yb      88\"\"   88\"\"\"  Yb  \"88  dP__Yb  88YbdP88 88 88 Y88 88\"\"   88\"Yb 
 
     g_cfg = pconfig;
     
-    pconfig->algo_name = strdup("radiant"); //free
-    pconfig->device_name = strdup("f1"); //free
+    pconfig->algo_name = strdup(""); //free
+    pconfig->device_name = strdup(""); //free
 
     
     pconfig->submit_queue = queue_create();
@@ -137,15 +122,6 @@ Yb      88\"\"   88\"\"\"  Yb  \"88  dP__Yb  88YbdP88 88 88 Y88 88\"\"   88\"Yb 
         // printf("usage: ./cfpgaminer -p [pool_host] -w [my_wallet]\n");
         return NULL;
     }
-
-    // if (pconfig->wallet == 0) {
-    //     pconfig->wallet = strdup("kaspa:qr36zdxs0dn3n0h799jhdl02qks5742lxjgmfsfj9xmlca7n4l6mw0s0n48nx");
-    // }
-
-    // if (pconfig->pool_host == 0) {
-    //     pconfig->pool_host = strdup("185.200.240.114:16061");
-    // }
-
     if (pconfig->rig_name == 0) {
         pconfig->rig_name = strdup("rig0");
     }
